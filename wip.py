@@ -8,11 +8,11 @@ import tensorflow as tf
 #http://theses.ubn.ru.nl/bitstream/handle/123456789/2620/Klep,%20D._BSc_thesis_2016.pdf?sequence=1
 # settings
 lr = 1e-4
-total_iterations = 5000           
+total_iterations = 10000           
 cross_validation_size = 1000
 dropout = 0.50
 batch_size = 50
-data = pd.read_csv('train_1.csv')
+data = pd.read_csv('train_rotate.csv')
 raw_img_input = data.iloc[:,1:].values
 raw_img_input = raw_img_input.astype(np.float)
 raw_img_input = np.multiply(raw_img_input, 1.0 / 255.0)

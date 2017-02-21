@@ -9,17 +9,17 @@ images = images.astype(np.float)
 labels = data[[0]].values.ravel()
 image_size = images.shape[1]
 image_width = image_height = np.ceil(np.sqrt(image_size)).astype(np.uint8)
-for x in range(0,34000, 2000):
+for x in range(0,4000, 2000):
     nTrain = np.empty((1,785))
     for i in range(x,x+2000):
        lab = labels[i]
-       for r in range(-10,20,10):
+       for r in range(-12,24,12):
             image = Image.fromarray(images[i].reshape(28,28))
             #print(image)
             rotated = Image.Image.rotate(image, r)
-            temp = np.array(rotated)
+            temp = np.roll(np.array(rotated), -6, axis=1)
             a = np.array(temp.flatten())
             b = (np.insert(a,0,lab)).reshape(1,785)
             nTrain = np.append(nTrain,b,axis=0)
        print(i)
-    np.savetxt("rotate_%s.csv" % x, nTrain, delimiter=",");
+    np.savetxt("trans_%s.xls" % x, nTrain, delimiter=",");
