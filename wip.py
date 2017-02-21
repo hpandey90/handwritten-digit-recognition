@@ -8,7 +8,7 @@ import tensorflow as tf
 #http://theses.ubn.ru.nl/bitstream/handle/123456789/2620/Klep,%20D._BSc_thesis_2016.pdf?sequence=1
 # settings
 lr = 1e-4
-total_iterations = 10000           
+total_iterations = 5000           
 cross_validation_size = 1000
 dropout = 0.50
 batch_size = 50
