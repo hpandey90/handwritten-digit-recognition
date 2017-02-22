@@ -17,7 +17,7 @@ for x in range(0,34000, 2000):
             image = Image.fromarray(images[i].reshape(28,28))
             #print(image)
             rotated = Image.Image.rotate(image, r)
-            #temp = np.roll(np.array(rotated), -3, axis=1)
+            temp = np.roll(np.array(rotated), -3, axis=1)
             a = np.array(temp.flatten())
             b = (np.insert(a,0,lab)).reshape(1,785)
             nTrain = np.append(nTrain,b,axis=0)
